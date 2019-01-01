@@ -1762,3 +1762,123 @@ $controlsArrowAngleActive: 36deg;
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
+
+
+/*********************************************
+ * CUSTOM STYLES
+ *********************************************/
+ .section {
+	 &-1 {
+		//  background: url('img/world-1.png') no-repeat center center;
+	 }
+ }
+ .reveal {
+	 font-size: 32px !important;
+ }
+ .slides {
+	 h1 {
+		font-style: italic;
+	 }
+	h2,h3,h4,h5 {
+		text-shadow: 0 0 10px black;
+		border-bottom: 1px solid #181818;
+	}
+	 p {
+		 text-align: left;
+		 box-shadow: inset 0 0 10px 0px #0e0e0e;
+		 padding: 10px 15px;
+		 border-radius: 10px;
+		 width: fit-content;
+		 max-width: 60vw;
+		 z-index: 999999;
+		 position: relative;
+	 }
+
+	 &-2 {
+		 &-img1 {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			border: none;
+			max-width: 38vw;
+		 }
+		 &-img2 {
+			top: 30%;
+			left: 60%;
+			max-width: 75px !important;
+			animation: rotate 20s linear infinite;
+		}
+		&-img3 {
+			top: 7%;
+			left: 80%;
+			max-width: 65px !important;
+			animation: rotate 25s linear infinite;
+		} 
+		&-img4 {
+			top: 60%;
+			left: 30%;
+			max-width: 50px !important;
+			animation: rotate 63s linear infinite;
+		} 
+		&-img5 {
+			top: 37%;
+			left: 93%;
+			max-width: 40px !important;
+			animation: rotate 32s linear infinite;
+		} 
+		&-img6 {
+			top: 87%;
+			left: 16%;
+			max-width: 63px !important;
+			animation: rotate 24s linear infinite;
+		} 
+		&-img7 {
+			top: 0%;
+			left: 10%;
+			max-width: 50px !important;
+			animation: rotate 26s linear infinite;
+		} 
+		&-img8 {
+			top: 80%;
+			left: 48%;
+			max-width: 75px !important;
+			animation: rotate 28s linear infinite;
+		} 
+		&-img9 {
+			top: 55%;
+			left: 14%;
+			max-width: 45px !important;
+			animation: rotate 10s linear infinite;
+		} 
+	 }
+ }
+
+ .p {
+	 &-right {
+		 float: right;
+	 }
+ }
+
+ .pure-gold {
+	 position: fixed;
+	 
+	 width: 100%;
+	 background: none !important;
+     border: none !important;
+     box-shadow: none !important;
+ }
+
+ @keyframes rotate {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+	25% {
+		transform: rotate(90deg) scale(1.1);
+	}
+	75% {
+		transform: rotate(270deg) scale(1);
+	}
+	100% {
+		transform: rotate(360deg) scale(1.1);
+	}
+  }
