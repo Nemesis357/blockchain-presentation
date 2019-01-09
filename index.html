@@ -7,7 +7,7 @@
 		<title>Blockchain Mining Presentation</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/beige.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -17,34 +17,81 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
+			
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+			</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-image="css/img/world-1.png">
+				<section data-background-image="css/img/blockchain-5.jpg">
 					<h1>Proof of Work vs. Proof of stake</h1>
 					<!-- <div class="slides-1-hero"><img src="./css/img/Proof-of-Work-vs-Proof-of-Stake.png" alt="main image"></div> -->
 
 					<p class="p-right">Presentation by: Nenad Nikolic</p>
 				</section>
+				<section  class="transactions">
+					<section data-background-image="css/img/mining.png" data-background-position="center 97%" data-background-size="30%">
+						<h2>Život transakcija</h2>
+						<p>Kako funkcioniše majning proces i kako su nove transakcije obrađene i dodate na blockchain mrežu?</p>
+					</section>
+					<section data-background-image="css/img/wallet.png" data-background-position="center 90%" data-background-size="60%">
+						<h4>Step 1:</h4>
+						<p>Korisnik odobrava transakciju u svojoj wallet aplikaciji.</p>
+					</section>
+					<section data-background-image="css/img/pool-1.png" data-background-position="95% 97%" data-background-size="35%">
+						<h4>Step 2:</h4>
+						<p>Wallet šalje transakciju na mrežu.</p>
+						<p>Sve dok je ne prihvati neki majner, transakcija stoji u pool-u neobrađenih transakcija.</p>
+						<p>Pool predstavlja kolekciju transakcija na mreži koje čekaju da budu obrađene (postanu deo bloka)</p>
+					</section>
+					<section data-background-image="css/img/transactions-pool.png" data-background-position="center 97%" data-background-size="50%">
+						<h4>Step 3:</h4>
+						<p>Majneri na mreže biraju transakcije iz pool-a i formiraju blok (uz prethodne provere).</p>
+						<p>Blok sadrži kolekciju transakcija (u ovom momentu i dalje ne obrađenih) i metadata.</p>
+					</section>
+					<section data-background-image="css/img/block-signature.png" data-background-position="center center" data-background-size="50%">
+						<h4>Step 4:</h4>
+						<p>Da bi blok bio prihvaćen od strane mreže, prvo mora da ima potpis.</p>
+						<p>Ovde se primenjuje Proof of Work algoritam.</p>
+					</section>
+					<section data-background-image="css/img/nodes1.jpg" data-background-position="center 97%" data-background-size="60%">
+						<h4>Step 5:</h4>
+						<p>Majner koji prvi pronađe rešenje ga šalje svim aktivnim majnerima na mreži.</p>
+					</section>
+					<section data-background-image="css/img/new-block.gif" data-background-position="center 97%" data-background-size="70%">
+						<h4>Step 6:</h4>
+						<p>Majneri proveravaju rešenje i, u slučaju da je rešenje validno, odobravaju integraciju bloka u blockchain.</p>
+						<p>Majner koji je došao do rešenja, ostalim majnerima šalje dokaz (Proof of Work), nakon čega dolazi do 	koncenzusa na mreži.</p>
+					</section>
+					<section data-background-image="css/img/blockchain.jpg" data-background-position="center 97%" data-background-size="35%">
+						<h4>Step 7:</h4>
+						<p>Uz saglasnost većine majnera blok se dodaje na blockchain, i smatra se 'potvrdom' da je blok pre njega validan.</p>
+						<p>Što više 'potvrda' neki blok ima, teže ga je promeniti.</p>
+						<p>Kada se novi blok usvoji, ostali majneri odbacuju pređašnji rad i kreću iz početka.</p>
+					</section>
+				</section>
 				<section class="blockchain-mining">
 					<section data-background-image="css/img/bitcoin-mining.png" data-background-position="bottom right" data-background-size="40%">
 						<h2>Blockchain majning</h2>
-						<p>Pod pojmom majning (mining) se podrazumeve dodavanje novih transakcija u globalnu knjigu računa (ledger).</p>
+						<p>Pod pojmom majning (mining) se podrazumeve obezbeđivanje mreže stvaranjem, verifikacijom, objavljivanjem i propagacijom novih blokova u blockchain-u.</p>
 						<p>U procesu majninga zadatak noda koji igra ulogu majnera je da od ulaznih podataka (transakcije, vreme, hash prethodnog bloka...) sastavi hash koji ispunjava uslove predodređene od strane mreže (target difficulty), sa ciljem stvaranja novog bloka u određenoj jedinici vremena (block time) koji će postati deo zvaničnog blockchain-a.</p>
-						<p>Tako dobijeni hash se naziva Proof of Work.</p>
-						<!-- <img class="slides-2-img1" src="./css/img/bitcoin-mining.png" alt="bitcoin mining"> -->
-						<img class="slides-2-img2 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img3 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img4 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img5 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img6 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img7 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img8 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
-						<img class="slides-2-img9 pure-gold" src="./css/img/minerals_pure_gold.png" alt="minerals pure gold">
+						<p>Majning služi:</p>
+						<ul style="display: block;">
+							<li>a.) verifikaciju transakcija</li>
+							<li>b.) generisanje novih tokena</li>
+						</ul>
+					</section>
+					<section data-background-image="css/img/hash-1.png" data-background-position="bottom right" data-background-size="60%">
+						<h4>Kriptografske heš funkcije</h4>
+						<p>Heš funkcije vrše transformaciju poruke proizvoljne dužine u izraz fiksne dužine.</p>
+						<p>Svaka heš funkcija je opisana određenim skupom osobina (jednosmerna,kolizione otpornosti)</p>
+
+						<p>Isti input uvek daje isti output.</p>
+						<p>Heš je teško dobiti, ali lako proveriti.</p>
+
+						<p><a href="https://anders.com/blockchain/hash.html" target="_blank">Blockchain Demo</a></p>
 					</section>
 					<section data-background-image="css/img/nodes.png" data-background-position="bottom right" data-background-size="60%">
 						<h4>Node vs. Miner</h4>
@@ -52,14 +99,7 @@
 						<p>Full Node: uređaj koji čuva punu kopiju blockchain-a.</p>
 						<p>Majner uvek mora da bude Full Node, kako bi bio u stanju da izabere validne transakcije da formira novi blok.</p>
 					</section>
-					<section data-background-image="css/img/hash-1.png" data-background-position="bottom right" data-background-size="60%">
-						<h4>Hash</h4>
-						<p>Uzima input bilo koje veličine i proizvodi output fiksne dužine.</p>
-						<p>Isti input uvek daje isti output.</p>
-						<p>Funkcioniše samo u jednom pravcu.</p>
-						<p>Teško ga je dobiti, ali ga je lako proveriti.</p>
-					</section>
-					<section data-background-image="css/img/difficulty.png" data-background-position="bottom right" data-background-size="60%">
+					<section data-background-image="css/img/difficulty.png" data-background-position="90% 90%" data-background-size="40%">
 						<h4>Target difficulty</h4>
 						<p>Određuje koliko je teško majnerima da dobiju zadovoljavajuću hesh vrednost.</p>
 						<p>Menja se u zavisnosti od broja aktivnih majnera na mreži i ukupne procesorske snage.</p>
@@ -76,48 +116,11 @@
 					</section>
 					<section>
 						<h4>Proof of Work: Btc vs. Eth</h4>
-
-					</section>
-				</section>
-				<section  class="transactions">
-					<section data-background-image="css/img/mining.png" data-background-position="bottom center" data-background-size="40%">
-						<h2>Procesuiranje transakcija</h2>
-						<p>Kako funkcioniše majning proces i kako su nove transakcije obrađene i dodate na blockchain mrežu?</p>
-					</section>
-					<section>
-						<h4>Step 1:</h4>
-						<p>Korisnik odobrava transakciju u svojoj wallet aplikaciji.</p>
-					</section>
-					<section>
-						<h4>Step 2:</h4>
-						<p>Wallet šalje transakciju na mrežu.</p>
-						<p>Sve dok je ne prihvati neki majner, transakcija stoji u pool-u neobrađenih transakcija.</p>
-						<p>Pool predstavlja kolekciju transakcija na mreži koje čekaju da budu obrađene (postanu deo bloka)</p>
-					</section>
-					<section>
-						<h4>Step 3:</h4>
-						<p>Majneri na mreže biraju transakcije iz pool-a i formiraju blok (uz prethodne provere).</p>
-						<p>Blok sadrži kolekciju transakcija (u ovom momentu i dalje ne obrađenih) i metadata.</p>
-					</section>
-					<section>
-						<h4>Step 4:</h4>
-						<p>Da bi blok bio prihvaćen od strane mreže, prvo mora da ima potpis.</p>
-						<p>Ovde se primenjuje Proof of Work algoritam.</p>
-					</section>
-					<section>
-						<h4>Step 5:</h4>
-						<p>Majner koji prvi pronađe rešenje ga šalje svim aktivnim majnerima na mreži.</p>
-					</section>
-					<section>
-						<h4>Step 6:</h4>
-						<p>Majneri proveravaju rešenje i, u slučaju da je rešenje validno, odobravaju integraciju bloka u blockchain.</p>
-						<p>Majner koji je došao do rešenja, ostalim majnerima šalje dokaz (Proof of Work), nakon čega dolazi do koncenzusa na mreži.</p>
-					</section>
-					<section>
-						<h4>Step 7:</h4>
-						<p>Uz saglasnost većine majnera blok se dodaje na blockchain, i smatra se 'potvrdom' da je blok pre njega validan.</p>
-						<p>Što više 'potvrda' neki blok ima, teže ga je promeniti.</p>
-						<p>Kada se novi blok usvoji, ostali majneri odbacuju pređašnji rad i kreću iz početka.</p>
+						<p>Potrošnja -> Btc: 56 TWh; Eth: 16 TWh</p>
+						<p>Block time -> Btc: ~10min; Eth: ~13sec</p>
+						<p>Transakcija po bloku -> Btc: ~500; Eth: /</p>
+						<p>Heš Algoritmi</p>
+						<p>Koncenzus Algoritmi</p>
 					</section>
 				</section>
 				<section class="pow-problems">
@@ -126,50 +129,64 @@
 						<ul>
 							<li>1.) Centralizacija</li>
 							<li>2.) Potrošnja energije (BTC = 56.217 TWh; ETH = 16.111 TWh)</li>
-							<li>Scalability</li>
+							<li>3.) Scalability</li>
 						</ul>
-
+					</section>
+					<section>
+						<h2>Centralizacija</h2>
 						<div class="minning-pools">
 							<img src="css/img/bit-pool.png" alt="">
 							<img src="css/img/eth-pool.png" alt="">
+						</div>
+					</section>
+					<section>
+						<h2>Potrošnja električne energije</h2>
+						<div class="minning-pools">
+							<img src="css/img/btc-vs-eth.jpg" alt="">
+							<img src="css/img/btc-vs-eth.png" alt="">
+							<!-- <img src="css/img/btc-consumption.jpeg" alt=""> -->
+							<!-- <img src="css/img/eth-consumption.jpg" alt=""> -->
 						</div>
 					</section>
 				</section>
 				<section class="proof-of-stake">
 					<section data-background-image="css/img/Proof-of-Work-vs-Proof-of-Stake-2.png" data-background-position="bottom right" data-background-size="30%">
 						<h2>Proof of Stake</h2>
-						<p>Cilj je isti kao kod PoW, međutim proces je potpuno drugačiji.</p>
+						<p>Cilj je isti kao kod PoW (validacija transakcija i izbegavanje duple potrošnje), međutim proces je potpuno drugačiji.</p>
 						<p>Nema majnera, samo validatora.</p>
 						<p>Nema majnovanja, svi tokeni su generisani na početku.</p>
-						<p>Majneri kao nagradu dobijaju samo honorar.</p>
+						<p>Validatori kao nagradu dobijaju samo honorar.</p>
+						<p>U slučaju kršenja pravila validatori gube deo ili ceo ulog (Slashing conditions)</p>
 					</section>
 					<section data-background-image="css/img/pool.png" data-background-position="90% 90%" data-background-size="30%">
-						<h4>PoS varijacije:</h4>
-						<p>On-chain Proof of Stake (Peercoin, Blackcoin...)</p>
-						<p>Byzantine Fault Tolerant Agreements (Tendermint, Stellar...)</p>
 						<h4>Izbor validatora</h4>
 						<p>Pozivanjem Casper contracta i slanjem Ether-a, validatori stupaju u pool.</p>
-						<p>Svako može da pristupi, a nagrada varira od broja validatora.</p>
+						<p>Svako može da pristupi, a nagrada varira od broja validatora. (1% - 12%)</p>
+						<h4>PoS varijacije:</h4>
+						<p>Chain-based Proof of Stake (Peercoin, Blackcoin...)</p>
+						<p>Byzantine Fault Tolerance Agreement (Tendermint, Stellar...)</p>
 					</section>
-					<section>
-						<h4>Izazovi postavljeni pred validatore</h4>
+					<section data-background-image="css/img/profit.png" data-background-position="90% 90%" data-background-size="60%">
+						<h4>Zadatak validator</h4>
+						<p>Ako je izabran, nod proverava validnost transakcija unutar bloka.</p>
+						<p>Nakon validacije dodaje blok u lanac.</p>
 						<p>Verovatnoća validacije transakcije zavisi od ukupnog uloga.</p>
 						<p>Nod mora biti aktivan 24/7</p>
-						<p>Rešenje je Poll of stake... PROVERITI!!!</p>
+						<p>Rešenje je Poll of stake</p>
 					</section>
 					<section>
 						<h4>CASPER</h4>
-						<p>Prva implementacija: Friendly Finality Gadget (hybrid Pow/PoS)</p>
-						<p>Druga implementacija: Correct-by-Construction (PoS)</p>
+						<p>Prva implementacija: Casper FFG (Friendly Finality Gadget) -> hybrid Pow/PoS</p>
+						<p>Druga implementacija: Casper CBC (Correct-by-Construction) -> PoS</p>
 					</section>
 					<section>
 						<h2>Friendly Finality Gadget (FFG)</h2>
 						<ul>
 							<li>Smart contract PoS (layer on top of PoW)</li>
 							<li>Ulog od (x) ETH za validatore (testnet 1500)</li>
-							<li>Vote. Većina od 2/3 (validatora po učešću)</li>
+							<li>Postoji jedna vrsta poruke: Vote. Većina od 2/3 (validatora po učešću)</li>
 							<li>Validatori snose pune posledice</li>
-							<li>Finality (na svakih 50 blokova)</li>
+							<li>Finality</li>
 						</ul>
 					</section>
 					<section>
